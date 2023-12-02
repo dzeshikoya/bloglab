@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница поста</title>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Главная страница</a></li>
+                <li><a href="/blog">Блог</a></li>
+                <li><a href="/blog/add">Добавить в блог!</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div>
+        <div th:each="el: ${post}">
+            <h2 th:text = "${el.GetTitle()}" />
+            <p th:text = "${el.GetAnnounce()}" />
+            <p th:text = "${el.GetText()}" />
+            
+            
+                <form th:action = "'/blog/'+ ${el.GetId()} + '/remove'" method="post">
+
+                <button type = "submit">Удалить</button>
+            </form>
+            
+
+            
+            <a th:href = "'/blog/'+ ${el.GetId()} + '/update'">Редактировать</a>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

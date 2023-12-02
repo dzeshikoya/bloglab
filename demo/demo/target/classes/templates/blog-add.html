@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавляем что-то в блог!!</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Главная страница</a></li>
+                <li><a href="/blog">Блог</a></li>
+                <li><a href="/blog/add">Добавить в блог!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <h1>Добавление поста</h1>
+        <form action = "/blog/add" method = "post">
+            <input type = "text" name = "title" placeholder = "Текст заголовка">
+            <input type = "text" name = "announce" placeholder = "Текст аннонса">
+            <textarea name = "text" placeholder = "Текст текста ( ͡° ͜ʖ ͡° )"></textarea>
+
+            <button type = "submit">Добавить</button>
+
+
+        </form>
+    </div>
+
+
+    
+</body>
+</html>

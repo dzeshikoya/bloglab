@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог типо</title>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Главная страница</a></li>
+                <li><a href="/blog">Блог</a></li>
+                <li><a href="/blog/add">Добавить в блог!</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <h1>Страница суперблога</h1>
+    <div th:each="el: ${posts}">
+        <h2 th:text = "${el.GetTitle()}" />
+        <p th:text = "${el.GetAnnounce()}" />
+        <a th:href = "'/blog/'+ ${el.GetId()}">Подробнее</a>
+
+
+    </div>
+
+
+
+
+</body>
+</html>

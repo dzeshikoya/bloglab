@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактировать пост</title>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Главная страница</a></li>
+                <li><a href="/blog">Блог</a></li>
+                <li><a href="/blog/add">Добавить в блог!</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div>
+        <h1>Редактирование поста</h1>
+        <div th:each="el: ${post}">
+            <form  method="post">
+
+
+            <input th:value = "${el.GetTitle()}" type = "text" name = "title" placeholder = "Текст заголовка">
+            <input th:value = "${el.GetAnnounce()}" type = "text" name = "announce" placeholder = "Текст аннонса">
+            <textarea th:text = "${el.GetText()}" name = "text" placeholder = "Текст текста ( ͡° ͜ʖ ͡° )"></textarea>
+            
+
+                <button type = "submit">Сохранить редактирование</button>
+            </form>
+            
+
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
